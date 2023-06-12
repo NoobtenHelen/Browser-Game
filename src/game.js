@@ -1,16 +1,14 @@
 import { allDrawableObjects, Box, RectangularSprite, Vector } from "./dynamics.js";
-import { OBSTACLE_LAYER } from "./layers.js";
+import { OBSTACLE_LAYER, PLAYER_LAYER, TRIGGER_LAYER } from "./layers.js";
 import { Player } from "./player.js";
+import { Trigger } from "./trigger.js";
 
 let canvas;		//Zeichenfläche
 let context;	//Zeichenwerkzeuge
 
 let player;	//Spielfigur
-let floorBounds;
-let upperBounds; //ceiling, bin aber zu faul das die ganze Zeit zu schreiben xD
-let leftBounds;
-let rightBounds;
 let object;
+let backgroundColor = "lightblue"
 
 document.body.onload = () => {
     init();
@@ -27,16 +25,24 @@ function init() {
     canvas.addEventListener("keyup", player.handleKeyup);
     canvas.focus();
 
-    floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER); 3
+    let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER); 3
 
-    upperBounds = new Box(canvas.width, 1, new Vector(0, 0), OBSTACLE_LAYER);
+    let upperBounds = new Box(canvas.width, 1, new Vector(0, -1), OBSTACLE_LAYER);
     upperBounds.color = "black";
 
-    leftBounds = new Box(1, canvas.height, new Vector(0, 0), OBSTACLE_LAYER);
+    let leftBounds = new Box(1, canvas.height, new Vector(-1, 0), OBSTACLE_LAYER);
     leftBounds.color = "black";
 
-    rightBounds = new Box(1, canvas.height, new Vector(canvas.width, 0), OBSTACLE_LAYER);
+    let rightBounds = new Box(1, canvas.height, new Vector(canvas.width, 0), OBSTACLE_LAYER);
     rightBounds.color = "black";
+
+    new Trigger(50, 50, new Vector(400, 200), () => {
+        backgroundColor = "red";
+    }, true);
+
+    new Trigger(50, 50, new Vector(200, 200), () => {
+        player.position = new Vector(50, canvas.height / 2);
+    }, true);
 
     let img2 = new Image();
     img2.src = "assets/char.png";
@@ -49,10 +55,17 @@ function update(elapsed) {
     allDrawableObjects[OBSTACLE_LAYER].forEach(obstacle => {
         obstacle.reflectBall(player, 0); // set damping to 0 to stop the player immediately
     });
+
+    allDrawableObjects[TRIGGER_LAYER].forEach(trigger => {
+        if (trigger.collidesWith(player.triggerCollider)) {
+            trigger.executeFunction();
+        }
+    })
+
 }
 
 function paint() {
-    context.fillStyle = "lightblue";
+    context.fillStyle = backgroundColor;
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     allDrawableObjects.forEach(layer => {

@@ -112,12 +112,13 @@ export class Ball extends Particle {
 
 
 export class Box extends Particle {
-	constructor(width, height, position, layer, velocity, mass) {
+	constructor(width, height, position, layer, velocity, mass, visible = true) {
 		super(position, velocity, mass);
 		this.width = width;
 		this.height = height;
 		this.layer = layer;
 		this.color = "black";
+		this.visible = visible;
 		addToLayer(layer, this)
 	}
 	//signed pseudo-distance to other box in x-direction
@@ -132,7 +133,7 @@ export class Box extends Particle {
 	}
 	//collision detection with other box
 	collidesWith(other) {
-		return (distX(other) < 0 && distY(other) < 0);
+		return (this.distX(other) < 0 && this.distY(other) < 0);
 	}
 	reflectBall(ball, damping = 1, friction = 1) {
 		let nearestPoint = new Vector(0, 0);
@@ -202,8 +203,10 @@ export class Box extends Particle {
 		}
 	}
 	draw(context) {
-		context.fillStyle = this.color;
-		context.fillRect(this.position.x, this.position.y, this.width, this.height);
+		if (this.visible) {
+			context.fillStyle = this.color;
+			context.fillRect(this.position.x, this.position.y, this.width, this.height);
+		}
 	}
 }
 

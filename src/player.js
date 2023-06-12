@@ -1,4 +1,4 @@
-import { CircularSprite, Vector } from "./dynamics.js";
+import { Box, CircularSprite, Vector } from "./dynamics.js";
 import { PLAYER_LAYER } from "./layers.js";
 
 export class Player extends CircularSprite {
@@ -11,6 +11,10 @@ export class Player extends CircularSprite {
 
         this.handleKeydown = this.handleKeydown.bind(this);
         this.handleKeyup = this.handleKeyup.bind(this);
+
+        let triggerColliderPosition = new Vector(position.x, position.y);
+        triggerColliderPosition.subtract(new Vector(25, 25));
+        this.triggerCollider = new Box(50, 50, triggerColliderPosition, PLAYER_LAYER, new Vector(0, 0), 0, true);
     }
 
     update(elapsed) {
@@ -31,6 +35,10 @@ export class Player extends CircularSprite {
         movement.mult(elapsed);
         movement.mult(this.speed);
         this.position.add(movement);
+
+        let triggerColliderPosition = new Vector(this.position.x, this.position.y);
+        triggerColliderPosition.subtract(new Vector(25, 25));
+        this.triggerCollider.position = triggerColliderPosition;
     }
 
     handleKeydown(event) {
