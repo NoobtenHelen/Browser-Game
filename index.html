@@ -13,7 +13,7 @@
 		.canvas-container {
 			height: 95%;
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			justify-content: center;
 			align-items: center;
 		}
@@ -30,6 +30,12 @@
 		h1 {
 			margin: 0;
 		}
+
+		.orange {
+			background-color: orange;
+			width: 5%;
+			height: 540px;
+		}
 	</style>
 </head>
 
@@ -38,7 +44,9 @@
 		<h1>Untitled browser game</h1>
 	</header>
 	<div class="canvas-container">
-		<canvas id="world" width="960" height="540" />
+		<div class="orange"></div>
+		<canvas id="world" width="960" height="540"></canvas>
+		<div class="orange"></div>
 	</div>
 </body>
 
