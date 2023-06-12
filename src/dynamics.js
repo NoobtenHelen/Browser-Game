@@ -211,8 +211,8 @@ export class Box extends Particle {
 }
 
 export class CircularSprite extends Ball {
-	constructor(img, radius, position, depth, scaleX = 1, scaleY = 1, visible = true) {
-		super(radius, position, depth);
+	constructor(img, radius, position, layer, scaleX = 1, scaleY = 1, visible = true) {
+		super(radius, position, layer);
 		this.img = img;
 		this.scaleX = scaleX;
 		this.scaleY = scaleY;
@@ -246,8 +246,8 @@ export class CircularSprite extends Ball {
 }
 
 export class RectangularSprite extends Box {
-	constructor(img, width, height, position, depth, visible = true) {
-		super(width, height, position, depth);
+	constructor(img, width, height, position, layer, visible = true) {
+		super(width, height, position, layer);
 		this.img = img;
 		this.visible = visible;
 	}

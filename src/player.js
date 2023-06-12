@@ -7,14 +7,12 @@ export class Player extends CircularSprite {
     constructor(position) {
         let img = new Image();
         img.src = "assets/sprite.png";
-        super(img, 38, position, PLAYER_LAYER);
+        super(img, 23, position, PLAYER_LAYER, 0.7, 0.7);
 
         this.handleKeydown = this.handleKeydown.bind(this);
         this.handleKeyup = this.handleKeyup.bind(this);
 
-        let triggerColliderPosition = new Vector(position.x, position.y);
-        triggerColliderPosition.subtract(new Vector(25, 25));
-        this.triggerCollider = new Box(50, 50, triggerColliderPosition, PLAYER_LAYER, new Vector(0, 0), 0, true);
+        this.triggerCollider = new Box(40, 40, new Vector(0, 0), PLAYER_LAYER, null, null, false);
     }
 
     update(elapsed) {
@@ -37,7 +35,7 @@ export class Player extends CircularSprite {
         this.position.add(movement);
 
         let triggerColliderPosition = new Vector(this.position.x, this.position.y);
-        triggerColliderPosition.subtract(new Vector(25, 25));
+        triggerColliderPosition.subtract(new Vector(20, 20));
         this.triggerCollider.position = triggerColliderPosition;
     }
 

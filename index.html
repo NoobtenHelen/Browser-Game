@@ -3,11 +3,43 @@
 
 <head>
 	<script src="src/game.js" type="module"></script>
+	<style>
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+		}
+
+		.canvas-container {
+			height: 95%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		header {
+			width: 100%;
+			height: 5%;
+			background-color: orange;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		h1 {
+			margin: 0;
+		}
+	</style>
 </head>
 
 <body>
-	<canvas id="world" width="800" height="600" tabindex="1" />
-	<!-- tabindex macht den canvas fokussierbar -->
+	<header>
+		<h1>Untitled browser game</h1>
+	</header>
+	<div class="canvas-container">
+		<canvas id="world" width="960" height="540" />
+	</div>
 </body>
 
 </html>
