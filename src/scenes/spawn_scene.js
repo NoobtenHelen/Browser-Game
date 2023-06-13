@@ -20,9 +20,14 @@ export class SpawnScene extends Scene {
         let rightBounds = new Box(1, canvas.height, new Vector(canvas.width, 0), OBSTACLE_LAYER);
         rightBounds.color = "black";
 
-        new Box(180, 600, new Vector(655, 0), OBSTACLE_LAYER, null, null, false);
+        
+        new Box(canvas.width, 20, new Vector(0, 395), OBSTACLE_LAYER, null, null, false);
+        new Box(canvas.width, 100, new Vector(0, 0), OBSTACLE_LAYER, null, null, false);
+        new Box(70, 230, new Vector(0, 0), OBSTACLE_LAYER, null, null, false);
+        new Box(100, 165, new Vector(510, 0), OBSTACLE_LAYER, null, null, false);
 
-        new Trigger(160, 10, new Vector(445, 0), () => {
+
+        new Trigger(16, 270, new Vector(950, 0), () => {
             console.log("HEHE");
             //change Backround to next scene
             //change Position
