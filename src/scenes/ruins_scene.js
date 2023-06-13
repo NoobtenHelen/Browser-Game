@@ -9,7 +9,7 @@ export class RuinsScene extends Scene {
         img.src = "assets/backgrounds/Ruins.png"
         super(canvas, img, new Vector(207, 253))
 
-        let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER); 3
+        let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER); 
 
         let upperBounds = new Box(canvas.width, 1, new Vector(0, -1), OBSTACLE_LAYER);
         upperBounds.color = "black";

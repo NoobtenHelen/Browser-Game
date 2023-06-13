@@ -1,7 +1,8 @@
 import { allDrawableObjects, Box, RectangularSprite, Vector } from "./dynamics.js";
 import { OBSTACLE_LAYER, TRIGGER_LAYER } from "./layers.js";
 import { Player } from "./player.js";
-import { RuinsScene } from "./scenes/ruins_scene.js";
+//import { RuinsScene } from "./scenes/ruins_scene.js";
+import { SpawnScene } from "./scenes/spawn_scene.js";
 
 let canvas;		//Zeichenfläche
 let context;	//Zeichenwerkzeuge
@@ -20,7 +21,7 @@ function init() {
 
     player = new Player(new Vector(0, 0));
 
-    let firstScene = new RuinsScene(canvas, player);
+    let firstScene = new SpawnScene(canvas, player);
 
     player.position = firstScene.spawnPoint;
 
