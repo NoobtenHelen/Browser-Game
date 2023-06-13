@@ -1,7 +1,6 @@
-import { allDrawableObjects, Box, RectangularSprite, Vector } from "./dynamics.js";
+import { allDrawableObjects, Vector } from "./dynamics.js";
 import { OBSTACLE_LAYER, TRIGGER_LAYER } from "./layers.js";
 import { Player } from "./player.js";
-//import { RuinsScene } from "./scenes/ruins_scene.js";
 import { SpawnScene } from "./scenes/spawn_scene.js";
 
 let canvas;		//Zeichenfläche

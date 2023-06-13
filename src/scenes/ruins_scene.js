@@ -7,9 +7,9 @@ export class RuinsScene extends Scene {
     constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Ruins.png"
-        super(canvas, img, new Vector(207, 253))
+        super(canvas, img, new Vector(207, 253), player)
 
-        let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER); 
+        let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
         let upperBounds = new Box(canvas.width, 1, new Vector(0, -1), OBSTACLE_LAYER);
         upperBounds.color = "black";
@@ -33,22 +33,22 @@ export class RuinsScene extends Scene {
         const img2 = new Image;
         img2.src = "assets/ruins/baum_ruins_1.png";
 
-        new RectangularSprite(img2, 317, 273, new Vector(399, 77), FOREGROUND_LAYER,true );
+        new RectangularSprite(img2, 317, 273, new Vector(399, 77), FOREGROUND_LAYER, true);
 
         const img3 = new Image;
         img3.src = "assets/ruins/baum_ruins_2.png";
 
-        new RectangularSprite(img3, 295, 145, new Vector(665, 0), OBSTACLE_LAYER,true );
+        new RectangularSprite(img3, 295, 145, new Vector(665, 0), OBSTACLE_LAYER, true);
 
         const img4 = new Image;
         img4.src = "assets/ruins/baum_ruins_2_1.png";
 
-        new RectangularSprite(img4, 93, 120, new Vector(867, 144), OBSTACLE_LAYER,true );
+        new RectangularSprite(img4, 93, 120, new Vector(867, 144), OBSTACLE_LAYER, true);
 
         const img5 = new Image;
         img5.src = "assets/ruins/stonecolumn_ruins.png";
 
-        new RectangularSprite(img5, 171, 238, new Vector(88, 169), FOREGROUND_LAYER ,true );
+        new RectangularSprite(img5, 171, 238, new Vector(88, 169), FOREGROUND_LAYER, true);
 
         // Example Trigger
         new Trigger(160, 10, new Vector(445, 0), () => {
