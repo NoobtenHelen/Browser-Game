@@ -1,5 +1,5 @@
-import { allDrawableObjects, Box, RectangularSprite, Vector } from "../dynamics.js";
-import { FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
+import { Box, Vector } from "../dynamics.js";
+import { OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { RuinsScene } from "./ruins_scene.js";
@@ -8,7 +8,7 @@ export class SpawnScene extends Scene {
     constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Spawn.png"
-        super(canvas, img, new Vector(207, 253), player)
+        super(canvas, img, new Vector(322, 250), player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 

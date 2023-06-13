@@ -70,11 +70,12 @@ export class Particle {
 //Modell eines ausgedehnten Balls mit Kollisionsabfrage;
 //Masse bislang noch nicht implementiert!
 export class Ball extends Particle {
-	constructor(radius, position, layer, velocity, mass) {
+	constructor(radius, position, layer, velocity, mass, visible = true) {
 		super(position, velocity, mass);
 		this.radius = radius;
 		this.layer = layer;
 		this.color = "black";
+		this.visible = visible;
 		addToLayer(layer, this);
 	}
 	distance(other) {
@@ -102,6 +103,8 @@ export class Ball extends Particle {
 		other.velocity.add(contactNormal);
 	}
 	draw(context) {
+		if (!this.visible) return;
+
 		context.fillStyle = this.color;
 		context.beginPath();
 		context.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, true);
@@ -212,11 +215,10 @@ export class Box extends Particle {
 
 export class CircularSprite extends Ball {
 	constructor(img, radius, position, layer, scaleX = 1, scaleY = 1, visible = true) {
-		super(radius, position, layer);
+		super(radius, position, layer, visible);
 		this.img = img;
 		this.scaleX = scaleX;
 		this.scaleY = scaleY;
-		this.visible = visible;
 	}
 	draw(context, lineWidth = 0) {
 		if (this.visible) {
@@ -246,10 +248,9 @@ export class CircularSprite extends Ball {
 }
 
 export class RectangularSprite extends Box {
-	constructor( img, width, height, position, layer, visible = true) {
-		super(width, height, position, layer);
+	constructor(img, width, height, position, layer, visible = true) {
+		super(width, height, position, layer, visible);
 		this.img = img;
-		this.visible = visible;
 	}
 	draw(context, lineWidth = 0) {
 		if (this.visible) {
