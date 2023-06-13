@@ -11,6 +11,16 @@
 			background: url("assets/processingly-AXN4l3UdV6s-unsplash.jpg") center;
 		}
 
+		header {
+			width: 100%;
+			height: 5%;
+			background-color: green;
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
 		.canvas-container {
 			height: 95%;
 			display: flex;
@@ -19,23 +29,20 @@
 			align-items: center;
 		}
 
-		header {
-			width: 100%;
-			height: 5%;
-			background-color: orange;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
 		h1 {
 			margin: 0;
 		}
 
-		.orange {
-			background-color: orange;
-			width: 5%;
-			height: 540px;
+		.tv {
+			width: calc(960px * 1.2);
+			height: calc(540px * 1.4);
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			background: url("assets/202P40_20-IMS-de_DE.webp") no-repeat;
+			background-size: calc(960px * 1.4) calc(540px * 1.85);
+			background-position: center -90px;
 		}
 	</style>
 </head>
@@ -44,13 +51,13 @@
 	<header>
 		<h1>Untitled browser game</h1>
 	</header>
-	<div class="orange"></div>
+
 	<div class="canvas-container">
-		<div class="orange"></div>
-		<canvas id="world" width="960" height="540"></canvas>
-		<div class="orange"></div>
+		<div class="tv">
+			<canvas id="world" width="960" height="540"></canvas>
+		</div>
 	</div>
-	<div class="orange"></div>
+
 </body>
 
 </html>

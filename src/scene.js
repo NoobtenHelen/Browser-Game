@@ -22,4 +22,5 @@ export class Scene {
         const newScene = new NewScene(this.canvas, this.player);
         this.player.position = newScene.spawnPoint;
     }
+
 }

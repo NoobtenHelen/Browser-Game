@@ -2,6 +2,7 @@ import { Box, RectangularSprite, Vector } from "../dynamics.js";
 import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
+import { SpawnScene } from "./spawn_scene.js";
 
 export class RuinsScene extends Scene {
     constructor(canvas, player) {
@@ -57,5 +58,10 @@ export class RuinsScene extends Scene {
             //change Backround to next scene
             //change Position
         }, true);
+
+        new Trigger(3, 270, new Vector(171, 0), () => {
+            console.log("HEHE");
+            this.loadScene(SpawnScene);
+        }, false);
     }
 }
