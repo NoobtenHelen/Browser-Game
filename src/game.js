@@ -22,7 +22,7 @@ function init() {
 
     let firstScene = new SpawnScene(canvas, player);
 
-    player.position = firstScene.spawnPoint;
+    player.position = firstScene.spawnPoints[0];
 
     document.body.addEventListener("keydown", player.handleKeydown);
     document.body.addEventListener("keyup", player.handleKeyup);

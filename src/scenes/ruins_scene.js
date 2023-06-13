@@ -8,7 +8,7 @@ export class RuinsScene extends Scene {
     constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Ruins.png"
-        super(canvas, img, new Vector(207, 253), player)
+        super(canvas, img, [new Vector(207, 253)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -61,7 +61,7 @@ export class RuinsScene extends Scene {
 
         new Trigger(3, 270, new Vector(171, 0), () => {
             console.log("HEHE");
-            this.loadScene(SpawnScene);
+            this.loadScene(SpawnScene, 1);
         }, false);
     }
 }
