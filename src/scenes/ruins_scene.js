@@ -1,5 +1,5 @@
 import { Box, RectangularSprite, Vector } from "../dynamics.js";
-import { FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
+import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 
@@ -33,7 +33,8 @@ export class RuinsScene extends Scene {
         const img2 = new Image;
         img2.src = "assets/ruins/baum_ruins_1.png";
 
-        new RectangularSprite(img2, 317, 273, new Vector(399, 77), FOREGROUND_LAYER, true);
+        let tree = new RectangularSprite(img2, 317, 273, new Vector(399, 77), DYNAMIC_LAYER, true);
+        tree.pivot = new Vector(0, 310)
 
         const img3 = new Image;
         img3.src = "assets/ruins/baum_ruins_2.png";

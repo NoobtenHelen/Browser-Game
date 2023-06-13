@@ -1,5 +1,5 @@
-import { allDrawableObjects, Vector } from "./dynamics.js";
-import { OBSTACLE_LAYER, TRIGGER_LAYER } from "./layers.js";
+import { addToLayer, allDrawableObjects, Vector } from "./dynamics.js";
+import { DYNAMIC_FOREGROUND_LAYER, DYNAMIC_LAYER, OBSTACLE_LAYER, TRIGGER_LAYER } from "./layers.js";
 import { Player } from "./player.js";
 import { SpawnScene } from "./scenes/spawn_scene.js";
 
@@ -47,11 +47,17 @@ function paint() {
     context.fillStyle = "lightblue";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    allDrawableObjects.forEach(layer => {
+    allDrawableObjects.forEach((layer, layerIndex) => {
         layer.forEach(element => {
+            if (layerIndex === DYNAMIC_LAYER && player.position.y < element.pivot.y) {
+                addToLayer(DYNAMIC_FOREGROUND_LAYER, element);
+                return;
+            }
             element.draw(context);
         })
     });
+
+    allDrawableObjects[DYNAMIC_FOREGROUND_LAYER] = []
 }
 
 let previous, elapsed;

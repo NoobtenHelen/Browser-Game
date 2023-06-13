@@ -1,5 +1,5 @@
-import { Box, Vector } from "../dynamics.js";
-import { OBSTACLE_LAYER } from "../layers.js";
+import { Box, RectangularSprite, Vector } from "../dynamics.js";
+import { OBSTACLE_LAYER, DYNAMIC_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { RuinsScene } from "./ruins_scene.js";
@@ -25,6 +25,13 @@ export class SpawnScene extends Scene {
         new Box(canvas.width, 100, new Vector(0, 0), OBSTACLE_LAYER, null, null, false)
         new Box(70, 230, new Vector(0, 0), OBSTACLE_LAYER, null, null, false)
         new Box(100, 165, new Vector(510, 0), OBSTACLE_LAYER, null, null, false)
+
+        const img_bush = new Image;
+        img_bush.src = "assets/spawn/bush_spawn_1.png";
+
+        let bush = new RectangularSprite(img_bush, 67, 71, new Vector(138, 283), DYNAMIC_LAYER, true);
+        bush.pivot = new Vector(169, 337)
+        new Box(10, 10, new Vector(162, 339), OBSTACLE_LAYER, null, null, false);
 
         new Trigger(30, 270, new Vector(930, 0), () => {
             console.log("HEHE");
