@@ -246,7 +246,7 @@ export class CircularSprite extends Ball {
 }
 
 export class RectangularSprite extends Box {
-	constructor(img, width, height, position, layer, visible = true) {
+	constructor( img, width, height, position, layer, visible = true) {
 		super(width, height, position, layer);
 		this.img = img;
 		this.visible = visible;

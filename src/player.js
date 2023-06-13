@@ -1,4 +1,4 @@
-import { Box, CircularSprite, Vector } from "./dynamics.js";
+import { Box, CircularSprite, RectangularSprite, Vector } from "./dynamics.js";
 import { PLAYER_LAYER } from "./layers.js";
 
 export class Player extends CircularSprite {
@@ -7,12 +7,15 @@ export class Player extends CircularSprite {
     constructor(position) {
         let img = new Image();
         img.src = "assets/sprite.png";
-        super(img, 23, position, PLAYER_LAYER, 0.7, 0.7);
+        super(img, 38, position, PLAYER_LAYER, 0.7, 0.7);
 
         this.handleKeydown = this.handleKeydown.bind(this);
         this.handleKeyup = this.handleKeyup.bind(this);
 
         this.triggerCollider = new Box(40, 40, new Vector(0, 0), PLAYER_LAYER, null, null, false);
+        //this.RectangularSprite(img, 40,20, new Vector(0,0), PLAYER_LAYER, null, null, true);
+
+
     }
 
     update(elapsed) {
@@ -37,6 +40,10 @@ export class Player extends CircularSprite {
         let triggerColliderPosition = new Vector(this.position.x, this.position.y);
         triggerColliderPosition.subtract(new Vector(20, 20));
         this.triggerCollider.position = triggerColliderPosition;
+
+        //let RectangularSpritePosition = new Vector(this.position.x, this.position.y);
+        //RectangularSpritePosition.subtract(new Vector(20,20));
+        //this.RectangularSpritePosition.position = RectangularSpritePosition;
     }
 
     handleKeydown(event) {
