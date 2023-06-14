@@ -1,3 +1,5 @@
+import { UI_LAYER } from "./layers.js";
+
 //Funktionen für 2D-Vektoren
 export class Vector {
 	constructor(x, y) {
@@ -249,7 +251,7 @@ export class CircularSprite extends Ball {
 
 export class RectangularSprite extends Box {
 	constructor(img, width, height, position, layer, visible = true) {
-		super(width, height, position, layer, visible);
+		super(width, height, position, layer, null, null, visible);
 		this.img = img;
 	}
 	draw(context, lineWidth = 0) {

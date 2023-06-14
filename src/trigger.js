@@ -2,8 +2,21 @@ import { Box } from "./dynamics.js";
 import { TRIGGER_LAYER } from "./layers.js";
 
 export class Trigger extends Box {
-    constructor(width, height, position, executeFunction, visibility = false) {
+    triggered = false;
+
+    constructor(width, height, position, enterFunction, exitFunction, visibility = false) {
         super(width, height, position, TRIGGER_LAYER, null, null, visibility);
-        this.executeFunction = executeFunction;
+        this.enterFunction = () => {
+            this.triggered = true;
+            if (enterFunction) {
+                enterFunction();
+            }
+        };
+        this.exitFunction = () => {
+            this.triggered = false;
+            if (exitFunction) {
+                exitFunction();
+            }
+        };
     }
 }

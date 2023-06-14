@@ -1,5 +1,5 @@
-import { Ball, Box, RectangularSprite, Vector } from "./dynamics.js";
-import { ENEMY_LAYER, PLAYER_LAYER } from "./layers.js";
+import { Ball, RectangularSprite, Vector } from "./dynamics.js";
+import { ENEMY_LAYER } from "./layers.js";
 
 export class Enemy extends Ball {
     speed = 200;
@@ -36,6 +36,8 @@ export class Enemy extends Ball {
         //triggerColliderPosition.subtract(new Vector(25, 36));
         //this.triggerCollider.position = triggerColliderPosition;
 
-        
+        let rectangularSpritePosition = new Vector(this.position.x, this.position.y);
+        rectangularSpritePosition.subtract(new Vector(38, 38 + 19));
+        this.sprite.position = rectangularSpritePosition;
     }
 }
