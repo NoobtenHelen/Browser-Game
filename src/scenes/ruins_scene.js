@@ -5,10 +5,10 @@ import { Trigger } from "../trigger.js";
 import { SpawnScene } from "./spawn_scene.js";
 
 export class RuinsScene extends Scene {
-    constructor(canvas, player) {
+    constructor(canvas, player, enemy) {
         const img = new Image;
         img.src = "assets/backgrounds/Ruins.png"
-        super(canvas, img, [new Vector(207, 253)], player)
+        super(canvas, img, [new Vector(207, 253)], player , enemy)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 

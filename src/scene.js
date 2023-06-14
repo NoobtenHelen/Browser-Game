@@ -20,8 +20,9 @@ export class Scene {
 
     loadScene(NewScene, spawnPointIndex) {
         this.reset();
-        const newScene = new NewScene(this.canvas, this.player);
+        const newScene = new NewScene(this.canvas, this.player, this.enemy);
         this.player.position = newScene.spawnPoints[spawnPointIndex];
+        this.enemy.position = newScene.spawnPoints[spawnPointIndex];
     }
 
 }

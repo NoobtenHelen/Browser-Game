@@ -1,16 +1,16 @@
 import { Ball, Box, RectangularSprite, Vector } from "./dynamics.js";
-import { PLAYER_LAYER } from "./layers.js";
+import { ENEMY_LAYER, PLAYER_LAYER } from "./layers.js";
 
 export class Enemy extends Ball {
     speed = 200;
 
     constructor(position) {
         let img = new Image();
-        img.src = "assets/spawn/enemy_spawn_test_1.png";
-        super(19, position, PLAYER_LAYER, new Vector(0, 0), null, false);
+        img.src = "assets/BURNING_SHEEP.png";
+        super(19, position, ENEMY_LAYER, new Vector(0, 0), null, false);
 
-        this.triggerCollider = new Box(50, 50, new Vector(0, 0), PLAYER_LAYER, null, null, false);
-        this.sprite = new RectangularSprite(img, 76, 76, new Vector(0, 0), PLAYER_LAYER);
+        //this.triggerCollider = new Box(50, 50, new Vector(0, 0), PLAYER_LAYER, null, null, false);
+        this.sprite = new RectangularSprite(img, 76, 76, new Vector(0, 0), ENEMY_LAYER, false);
     }
 
     update(elapsed) {
@@ -32,9 +32,9 @@ export class Enemy extends Ball {
         movement.mult(this.speed);
         this.position.add(movement);
 
-        let triggerColliderPosition = new Vector(this.position.x, this.position.y);
-        triggerColliderPosition.subtract(new Vector(25, 36));
-        this.triggerCollider.position = triggerColliderPosition;
+        //let triggerColliderPosition = new Vector(this.position.x, this.position.y);
+        //triggerColliderPosition.subtract(new Vector(25, 36));
+        //this.triggerCollider.position = triggerColliderPosition;
 
         
     }
