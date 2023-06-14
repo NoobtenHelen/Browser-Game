@@ -1,4 +1,3 @@
-import { UI_LAYER } from "./layers.js";
 
 //Funktionen für 2D-Vektoren
 export class Vector {

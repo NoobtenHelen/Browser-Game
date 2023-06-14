@@ -1,4 +1,4 @@
-import { allDrawableObjects, Box, RectangularSprite, Vector } from "../dynamics.js";
+import { Box, RectangularSprite, Vector } from "../dynamics.js";
 import { Enemy } from "../enemy.js";
 import { OBSTACLE_LAYER, DYNAMIC_LAYER, FOREGROUND_LAYER, UI_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber

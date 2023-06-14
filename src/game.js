@@ -1,8 +1,6 @@
 import { addToLayer, allDrawableObjects, Vector } from "./dynamics.js";
-import { Enemy } from "./enemy.js";
 import { DYNAMIC_FOREGROUND_LAYER, DYNAMIC_LAYER, ENEMY_LAYER, OBSTACLE_LAYER, TRIGGER_LAYER } from "./layers.js";
 import { Player } from "./player.js";
-import { RuinsScene } from "./scenes/ruins_scene.js";
 import { SpawnScene } from "./scenes/spawn_scene.js";
 
 let canvas;		//Zeichenfläche
