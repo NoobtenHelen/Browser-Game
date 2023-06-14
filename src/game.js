@@ -1,12 +1,15 @@
 import { addToLayer, allDrawableObjects, Vector } from "./dynamics.js";
+import { Enemy } from "./enemy.js";
 import { DYNAMIC_FOREGROUND_LAYER, DYNAMIC_LAYER, OBSTACLE_LAYER, TRIGGER_LAYER } from "./layers.js";
 import { Player } from "./player.js";
+import { RuinsScene } from "./scenes/ruins_scene.js";
 import { SpawnScene } from "./scenes/spawn_scene.js";
 
 let canvas;		//Zeichenfläche
 let context;	//Zeichenwerkzeuge
 
 let player;	//Spielfigur
+let enemy;
 
 document.body.onload = () => {
     init();
@@ -19,10 +22,13 @@ function init() {
     context = canvas.getContext("2d");
 
     player = new Player(new Vector(0, 0));
+    enemy = new Enemy(new Vector(0,0));
 
     let firstScene = new SpawnScene(canvas, player);
+    //let secondScene = new RuinsScene(canvas, player);
 
     player.position = firstScene.spawnPoints[0];
+    enemy.position = firstScene.spawnPoints[2];
 
     document.body.addEventListener("keydown", player.handleKeydown);
     document.body.addEventListener("keyup", player.handleKeyup);
@@ -30,6 +36,7 @@ function init() {
 
 function update(elapsed) {
     player.update(elapsed);
+    enemy.update(elapsed);
 
     allDrawableObjects[OBSTACLE_LAYER].forEach(obstacle => {
         obstacle.reflectBall(player, 0); // set damping to 0 to stop the player immediately
