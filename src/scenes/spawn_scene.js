@@ -55,15 +55,18 @@ export class SpawnScene extends Scene {
         const img_interact = new Image;
         img_interact.src = "assets/spawn/Interact.png";
 
+        
+
         let greentutorial = new Trigger(42, 31, new Vector(397, 180), () => {
-            new RectangularSprite(img_interact, 180, 70, new Vector(325, 14), FOREGROUND_LAYER, true);
-            if (player.position !==  this.Trigger) {
+            new RectangularSprite(img_interact, 180, 70, new Vector(325, 14), FOREGROUND_LAYER, false);
+            if (player.position ===  this.Trigger) {
                 RectangularSprite.visible = false;
             }
-        }, true);
+        }, false);
 
         const img_attack = new Image;
         img_attack.src = "assets/spawn/Attack.png";
+        
 
         let redtutorial = new Trigger(42, 31, new Vector(397, 236), () => {
             new RectangularSprite(img_attack, 180, 70, new Vector(325, 14), FOREGROUND_LAYER, true);
