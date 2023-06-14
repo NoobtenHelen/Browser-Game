@@ -50,6 +50,18 @@ export class SpawnScene extends Scene {
         new Trigger(30, 270, new Vector(930, 0), () => {
             console.log("HEHE");
             this.loadScene(RuinsScene, 0);
+        }, false); 
+
+        let greentutorial = new Trigger(42, 31, new Vector(397, 180), () => {
+
+        }, true);
+
+        let redtutorial = new Trigger(42, 31, new Vector(397, 236), () => {
+
+        }, true);
+
+        let bluetutorial = new Trigger(42, 31, new Vector(397, 293), () => {
+
         }, true);
     }
 }
