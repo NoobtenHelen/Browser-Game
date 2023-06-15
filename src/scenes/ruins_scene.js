@@ -2,13 +2,14 @@ import { Box, RectangularSprite, Vector } from "../dynamics.js";
 import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
+import { LookoutScene } from "./lookout_scene.js";
 import { SpawnScene } from "./spawn_scene.js";
 
 export class RuinsScene extends Scene {
     constructor(canvas, player, enemy) {
         const img = new Image;
         img.src = "assets/backgrounds/Ruins.png"
-        super(canvas, img, [new Vector(207, 253)], player, enemy)
+        super(canvas, img, [new Vector(207, 253), new Vector(899, 303)], player, enemy)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -55,13 +56,17 @@ export class RuinsScene extends Scene {
         // Example Trigger
         new Trigger(160, 10, new Vector(445, 0), () => {
             console.log("HEHE");
-            //change Backround to next scene
-            //change Position
+            this.loadScene(LookoutScene, 0);
         }, true);
 
         new Trigger(3, 270, new Vector(171, 0), () => {
             console.log("HEHE");
             this.loadScene(SpawnScene, 1);
+        }, false);
+
+        new Trigger(2, 75, new Vector(958, 269), () => {
+            console.log("HEHE");
+            this.loadScene(LookoutScene, 0);
         }, false);
     }
 }
