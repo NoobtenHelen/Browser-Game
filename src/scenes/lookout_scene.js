@@ -8,7 +8,7 @@ export class LookoutScene extends Scene {
     constructor(canvas, player, enemy) {
         const img = new Image;
         img.src = "assets/backgrounds/Lookout.png"
-        super(canvas, img, [new Vector(143, 455)], player, enemy)
+        super(canvas, img, [new Vector(33, 108), new Vector(28, 458)], player, enemy)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -39,22 +39,41 @@ export class LookoutScene extends Scene {
         new Box(34, 102, new Vector(68, 170), OBSTACLE_LAYER, null, null, false);
         new Box(34, 85, new Vector(102, 187), OBSTACLE_LAYER, null, null, false);
         new Box(34, 56, new Vector(170, 216), OBSTACLE_LAYER, null, null, false);
-        new Box(34, 41, new Vector(205, 232), OBSTACLE_LAYER, null, null, false);
+        new Box(34, 41, new Vector(204, 231), OBSTACLE_LAYER, null, null, false);
+        new Box(34, 71, new Vector(136, 201), OBSTACLE_LAYER, null, null, false);
+
 
         new Box(15, 172, new Vector(238, 231), OBSTACLE_LAYER, null, null, false);
         new Box(14, 160, new Vector(380, 243), OBSTACLE_LAYER, null, null, false);
         new Box(9, 83, new Vector(385, 160), OBSTACLE_LAYER, null, null, false);
+        new Box(39, 26, new Vector(48, 417), OBSTACLE_LAYER, null, null, false);
+        new Box(554, 5, new Vector(0, 522), OBSTACLE_LAYER, null, null, false);
+        new Box(15, 9, new Vector(447, 434), OBSTACLE_LAYER, null, null, false);
+        new Box(83, 110, new Vector(157, 239), OBSTACLE_LAYER, null, null, false);
 
-        new 
+        const img_baum = new Image;
+        img_baum.src = "assets/lookout/baum_lookout_1.png";
+
+        let baum = new RectangularSprite(img_baum, 185, 185, new Vector(0, 258), DYNAMIC_LAYER, true);
+        baum.pivot = new Vector(79, 423)
+
+        const img_bush_lookout = new Image;
+        img_bush_lookout.src = "assets/lookout/bush_lookout_1.png";
+
+        let bush_lookout = new RectangularSprite(img_bush_lookout, 67, 71, new Vector(423, 377), DYNAMIC_LAYER, true);
+        bush_lookout.pivot = new Vector(453,431)
 
 
 
-        
-        
 
         new Trigger(2, 81, new Vector(0, 437), () => {
             console.log("HEHE");
             this.loadScene(RuinsScene, 1);
+        }, false);
+
+        new Trigger(2, 64, new Vector(0, 58), () => {
+            console.log("HEHE");
+            this.loadScene(RuinsScene, 2);
         }, false);
     }
 }
