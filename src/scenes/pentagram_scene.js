@@ -56,7 +56,7 @@ export class PentagramScene extends Scene {
 
         new Trigger(161, 2, new Vector(399, 0), () => {
             console.log("HEHE");
-            this.loadScene(AutumnScene, 0);
+            this.loadScene(AutumnScene, 2);
         }, true);
 
         new Trigger(220, 2, new Vector(393, 537), () => {
@@ -64,6 +64,6 @@ export class PentagramScene extends Scene {
             this.loadScene(WaterfallScene, 1);
         }, true);
 
-        
+
     }
 }

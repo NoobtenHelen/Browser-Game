@@ -3,7 +3,7 @@ import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { LookoutScene } from "./lookout_scene.js";
-import { PentagramScene} from "./pentagram_scene.js";
+import { PentagramScene } from "./pentagram_scene.js";
 import { RelicsScene } from "./relics_scene.js";
 
 
@@ -11,7 +11,7 @@ export class AutumnScene extends Scene {
     constructor(canvas, player, enemy) {
         const img = new Image;
         img.src = "assets/backgrounds/Autumn.png"
-        super(canvas, img, [new Vector(673, 458),new Vector(294,28)], player, enemy)
+        super(canvas, img, [new Vector(673, 458), new Vector(309, 45), new Vector(241, 494)], player, enemy)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -106,6 +106,6 @@ export class AutumnScene extends Scene {
             console.log("HEHE");
             this.loadScene(PentagramScene, 0);
         }, true);
-        
+
     }
 }

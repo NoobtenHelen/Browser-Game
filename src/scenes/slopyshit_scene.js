@@ -2,6 +2,7 @@ import { Box, RectangularSprite, Vector } from "../dynamics.js";
 import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
+import { AutumnScene } from "./autumn_scene.js";
 import { LookoutScene } from "./lookout_scene.js";
 import { RuinsScene } from "./ruins_scene.js";
 import { WaterfallScene } from "./waterfall_scene.js";
@@ -11,7 +12,7 @@ export class SlopyShitScene extends Scene {
     constructor(canvas, player, enemy) {
         const img = new Image;
         img.src = "assets/backgrounds/Slopyshit.png"
-        super(canvas, img, [new Vector(616, 461), new Vector(903,433), new Vector(562,55)], player, enemy)
+        super(canvas, img, [new Vector(616, 461), new Vector(903, 433), new Vector(562, 55)], player, enemy)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -70,7 +71,6 @@ export class SlopyShitScene extends Scene {
         new Box(16, 15, new Vector(52, 501), OBSTACLE_LAYER, null, null, false);
         new Box(15, 15, new Vector(24, 474), OBSTACLE_LAYER, null, null, false);
         new Box(84, 35, new Vector(21, 396), OBSTACLE_LAYER, null, null, false);
-        
 
 
 
@@ -88,7 +88,8 @@ export class SlopyShitScene extends Scene {
 
 
 
-        
+
+
 
 
 
@@ -97,7 +98,7 @@ export class SlopyShitScene extends Scene {
 
         let halftree = new RectangularSprite(img_halftree, 103, 291, new Vector(0, 0), DYNAMIC_LAYER, true);
         halftree.pivot = new Vector(67, 227);
-        
+
 
         const img_tree_slopy = new Image;
         img_tree_slopy.src = "assets/slopyshit/baum_slopy_1.png";
@@ -136,10 +137,10 @@ export class SlopyShitScene extends Scene {
         //Autumn
         new Trigger(120, 3, new Vector(513, 11), () => {
             console.log("HEHE");
-            this.loadScene(WaterfallScene, 0);
+            this.loadScene(AutumnScene, 0);
         }, false);
 
-        
+
         new Trigger(73, 3, new Vector(29, 0), () => {
             console.log("HEHE");
             this.loadScene(WaterfallScene, 0);

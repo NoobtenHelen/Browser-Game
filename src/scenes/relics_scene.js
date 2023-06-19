@@ -27,16 +27,44 @@ export class RelicsScene extends Scene {
 
         new Box(7, 146, new Vector(390, 394), OBSTACLE_LAYER, null, null, false);
         new Box(390, 6, new Vector(0, 394), OBSTACLE_LAYER, null, null, false);
-        new Box(7, 146, new Vector(390, 394), OBSTACLE_LAYER, null, null, false);
+        new Box(34, 22, new Vector(213, 379), OBSTACLE_LAYER, null, null, false);
+        new Box(34, 22, new Vector(99, 379), OBSTACLE_LAYER, null, null, false);
+        new Box(7, 146, new Vector(563, 394), OBSTACLE_LAYER, null, null, false);
+        new Box(390, 6, new Vector(570, 394), OBSTACLE_LAYER, null, null, false);
+        new Box(34, 22, new Vector(713, 379), OBSTACLE_LAYER, null, null, false);
+        new Box(399, 121, new Vector(0, 181), OBSTACLE_LAYER, null, null, false);
+        new Box(396, 121, new Vector(564, 181), OBSTACLE_LAYER, null, null, false);
+        new Box(202, 120, new Vector(381, 73), OBSTACLE_LAYER, null, null, false);
+        new Box(126, 12, new Vector(424, 214), OBSTACLE_LAYER, null, null, false);
+        new Box(28, 12, new Vector(396, 226), OBSTACLE_LAYER, null, null, false);
+        new Box(28, 12, new Vector(533, 226), OBSTACLE_LAYER, null, null, false);
+        new Box(28, 12, new Vector(382, 238), OBSTACLE_LAYER, null, null, false);
+        new Box(28, 12, new Vector(552, 238), OBSTACLE_LAYER, null, null, false);
+        new Box(28, 12, new Vector(373, 250), OBSTACLE_LAYER, null, null, false);
+        new Box(28, 12, new Vector(561, 250), OBSTACLE_LAYER, null, null, false);
 
 
-        
 
 
 
 
 
-        new Trigger(158, 2, new Vector(401, 538), () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        new Trigger(158, 3, new Vector(405, 537), () => {
             console.log("HEHE");
             this.loadScene(AutumnScene, 1);
         }, true);
