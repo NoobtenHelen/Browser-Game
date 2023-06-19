@@ -3,7 +3,7 @@ import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { LookoutScene } from "./lookout_scene.js";
-import { PentargramScene } from "./pentagram_scene.js";
+import { PentagramScene} from "./pentagram_scene.js";
 import { SlopyShitScene } from "./slopyshit_scene.js";
 import { SpawnScene } from "./spawn_scene.js";
 
@@ -63,7 +63,7 @@ export class WaterfallScene extends Scene {
 
         new Trigger(99, 2, new Vector(689, 0), () => {
             console.log("HEHE");
-            this.loadScene(PentargramScene, 0);
+            this.loadScene(PentagramScene, 0);
         }, true);
         
     }

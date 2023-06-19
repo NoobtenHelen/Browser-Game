@@ -3,15 +3,15 @@ import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { LookoutScene } from "./lookout_scene.js";
-import { PentagramScene, PentargramScene } from "./pentagram_scene.js";
-import { SlopyShitScene } from "./slopyshit_scene.js";
-import { SpawnScene } from "./spawn_scene.js";
+import { PentagramScene} from "./pentagram_scene.js";
+import { RelicsScene } from "./relics_scene.js";
+
 
 export class AutumnScene extends Scene {
     constructor(canvas, player, enemy) {
         const img = new Image;
         img.src = "assets/backgrounds/Autumn.png"
-        super(canvas, img, [new Vector(673, 458)], player, enemy)
+        super(canvas, img, [new Vector(673, 458),new Vector(294,28)], player, enemy)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -99,7 +99,7 @@ export class AutumnScene extends Scene {
 
         new Trigger(157, 2, new Vector(257, 0), () => {
             console.log("HEHE");
-            this.loadScene(RelicsScene, 2);
+            this.loadScene(RelicsScene, 0);
         }, true);
 
         new Trigger(99, 2, new Vector(689, 0), () => {
