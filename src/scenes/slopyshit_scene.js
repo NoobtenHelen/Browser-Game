@@ -133,8 +133,14 @@ export class SlopyShitScene extends Scene {
             this.loadScene(LookoutScene, 0);
         }, false);
 
-        //NeueScene
+        //Autumn
         new Trigger(120, 3, new Vector(513, 11), () => {
+            console.log("HEHE");
+            this.loadScene(WaterfallScene, 0);
+        }, false);
+
+        
+        new Trigger(73, 3, new Vector(29, 0), () => {
             console.log("HEHE");
             this.loadScene(WaterfallScene, 0);
         }, false);

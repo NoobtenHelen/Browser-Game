@@ -3,6 +3,7 @@ import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { LookoutScene } from "./lookout_scene.js";
+import { PentargramScene } from "./pentagram_scene.js";
 import { SlopyShitScene } from "./slopyshit_scene.js";
 import { SpawnScene } from "./spawn_scene.js";
 
@@ -10,7 +11,7 @@ export class WaterfallScene extends Scene {
     constructor(canvas, player, enemy) {
         const img = new Image;
         img.src = "assets/backgrounds/Waterfall.png"
-        super(canvas, img, [new Vector(764, 446)], player, enemy)
+        super(canvas, img, [new Vector(764, 446), new Vector(675,52)], player, enemy)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -26,7 +27,7 @@ export class WaterfallScene extends Scene {
         new Box(166, 302, new Vector(794, 0), OBSTACLE_LAYER, null, null, false);
         new Box(48, 80, new Vector(778, 0), OBSTACLE_LAYER, null, null, false);
         new Box(55, 174, new Vector(774, 77), OBSTACLE_LAYER, null, null, false);
-        new Box(105, 181, new Vector(537, 80), OBSTACLE_LAYER, null, null, false);
+        new Box(115, 181, new Vector(537, 80), OBSTACLE_LAYER, null, null, false);
         new Box(124, 31, new Vector(836, 410), OBSTACLE_LAYER, null, null, false);
         new Box(75, 108, new Vector(624, 432), OBSTACLE_LAYER, null, null, false);
         new Box(75, 38, new Vector(523, 414), OBSTACLE_LAYER, null, null, false);
@@ -45,25 +46,6 @@ export class WaterfallScene extends Scene {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         const img_bridge = new Image;
         img_bridge.src = "assets/waterfall/bridge_waterfall_1.png";
 
@@ -77,6 +59,11 @@ export class WaterfallScene extends Scene {
         new Trigger(183, 2, new Vector(803, 538), () => {
             console.log("HEHE");
             this.loadScene(SlopyShitScene, 2);
+        }, true);
+
+        new Trigger(99, 2, new Vector(689, 0), () => {
+            console.log("HEHE");
+            this.loadScene(PentargramScene, 0);
         }, true);
         
     }
