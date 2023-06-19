@@ -3,6 +3,7 @@ import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { LookoutScene } from "./lookout_scene.js";
+import { SlopyShitScene } from "./slopyshit_scene.js";
 import { SpawnScene } from "./spawn_scene.js";
 
 export class RuinsScene extends Scene {
@@ -56,7 +57,7 @@ export class RuinsScene extends Scene {
         // Example Trigger
         new Trigger(160, 10, new Vector(445, 0), () => {
             console.log("HEHE");
-            this.loadScene(LookoutScene, 0);
+            this.loadScene(SlopyShitScene, 0);
         }, true);
 
 

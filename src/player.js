@@ -2,7 +2,7 @@ import { Ball, Box, RectangularSprite, Vector } from "./dynamics.js";
 import { PLAYER_LAYER } from "./layers.js";
 
 export class Player extends Ball {
-    speed = 200;
+    speed = 400;
 
     constructor(position) {
         let img = new Image();
