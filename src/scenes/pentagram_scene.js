@@ -2,12 +2,13 @@ import { Box, RectangularSprite, Vector } from "../dynamics.js";
 import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
+import { AutumnScene } from "./autumn_scene.js";
 import { LookoutScene } from "./lookout_scene.js";
 import { SlopyShitScene } from "./slopyshit_scene.js";
 import { SpawnScene } from "./spawn_scene.js";
 import { WaterfallScene } from "./waterfall_scene.js";
 
-export class PentargramScene extends Scene {
+export class PentagramScene extends Scene {
     constructor(canvas, player, enemy) {
         const img = new Image;
         img.src = "assets/backgrounds/Pentagram.png"
@@ -55,7 +56,7 @@ export class PentargramScene extends Scene {
 
         new Trigger(161, 2, new Vector(399, 0), () => {
             console.log("HEHE");
-            this.loadScene(SpawnScene, 0);
+            this.loadScene(AutumnScene, 0);
         }, true);
 
         new Trigger(220, 2, new Vector(393, 537), () => {
