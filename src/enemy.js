@@ -19,7 +19,7 @@ export class Enemy extends Ball {
             this.isChasingPlayer = false
         }, false);
 
-        this.hitbox = new Trigger(50, 50, new Vector(0, 0), onHit, null, true);
+        this.hitbox = new Trigger(50, 50, new Vector(0, 0), onHit, null, false);
 
         setInterval(() => {
             this.randomDirection.x = Math.random() * 2 - 1;
