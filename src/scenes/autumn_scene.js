@@ -5,6 +5,7 @@ import { Trigger } from "../trigger.js";
 import { LookoutScene } from "./lookout_scene.js";
 import { PentagramScene } from "./pentagram_scene.js";
 import { RelicsScene } from "./relics_scene.js";
+import { SlopyShitScene } from "./slopyshit_scene.js";
 
 
 export class AutumnScene extends Scene {
@@ -39,6 +40,24 @@ export class AutumnScene extends Scene {
         new Box(26, 12, new Vector(812, 386), OBSTACLE_LAYER, null, null, false);
         new Box(26, 12, new Vector(826, 374), OBSTACLE_LAYER, null, null, false);
         new Box(26, 12, new Vector(837, 362), OBSTACLE_LAYER, null, null, false);
+        new Box(166, 48, new Vector(794, 364), OBSTACLE_LAYER, null, null, false);
+        new Box(220, 239, new Vector(389, 301), OBSTACLE_LAYER, null, null, false);
+        new Box(165, 144, new Vector(424, 157), OBSTACLE_LAYER, null, null, false);
+        new Box(92, 80, new Vector(424, 77), OBSTACLE_LAYER, null, null, false);
+        new Box(74, 77, new Vector(417, 0), OBSTACLE_LAYER, null, null, false);
+        new Box(20, 300, new Vector(275, 164), OBSTACLE_LAYER, null, null, false);
+        new Box(65, 212, new Vector(0, 0), OBSTACLE_LAYER, null, null, false);
+        new Box(68, 104, new Vector(66, 0), OBSTACLE_LAYER, null, null, false);
+        new Box(139, 59, new Vector(99, 0), OBSTACLE_LAYER, null, null, false);
+
+
+
+
+
+
+
+
+
 
         const img_steindings_1 = new Image;
         img_steindings_1.src = "assets/autumn/steindings_autumn_1.png";
@@ -89,9 +108,14 @@ export class AutumnScene extends Scene {
             this.loadScene(RelicsScene, 0);
         }, true);
 
-        new Trigger(99, 2, new Vector(689, 0), () => {
+        new Trigger(195, 3, new Vector(186, 536), () => {
             console.log("HEHE");
-            this.loadScene(PentagramScene, 0);
+            this.loadScene(PentagramScene, 1);
+        }, true);
+
+        new Trigger(106, 3, new Vector(627, 537), () => {
+            console.log("HEHE");
+            this.loadScene(SlopyShitScene, 2);
         }, true);
 
     }

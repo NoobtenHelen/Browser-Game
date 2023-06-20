@@ -12,7 +12,7 @@ export class SlopyShitScene extends Scene {
     constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Slopyshit.png"
-        super(canvas, img, [new Vector(616, 461), new Vector(903, 433), new Vector(562, 55)], player)
+        super(canvas, img, [new Vector(616, 461), new Vector(903, 433), new Vector(562, 55), new Vector(47, 73)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -71,6 +71,10 @@ export class SlopyShitScene extends Scene {
         new Box(16, 15, new Vector(52, 501), OBSTACLE_LAYER, null, null, false);
         new Box(15, 15, new Vector(24, 474), OBSTACLE_LAYER, null, null, false);
         new Box(84, 35, new Vector(21, 396), OBSTACLE_LAYER, null, null, false);
+        new Box(32, 107, new Vector(0, 132), OBSTACLE_LAYER, null, null, false);
+        new Box(70, 56, new Vector(0, 206), OBSTACLE_LAYER, null, null, false);
+
+
 
 
 

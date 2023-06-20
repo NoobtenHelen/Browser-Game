@@ -9,7 +9,7 @@ export class PentagramScene extends Scene {
     constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Pentagram.png"
-        super(canvas, img, [new Vector(504, 480)], player)
+        super(canvas, img, [new Vector(504, 480), new Vector(462, 66)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 

@@ -3,7 +3,7 @@ import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { LookoutScene } from "./lookout_scene.js";
-import { PentagramScene} from "./pentagram_scene.js";
+import { PentagramScene } from "./pentagram_scene.js";
 import { SlopyShitScene } from "./slopyshit_scene.js";
 import { SpawnScene } from "./spawn_scene.js";
 
@@ -11,7 +11,7 @@ export class WaterfallScene extends Scene {
     constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Waterfall.png"
-        super(canvas, img, [new Vector(764, 446), new Vector(675,52)], player)
+        super(canvas, img, [new Vector(764, 446), new Vector(675, 52)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -56,15 +56,15 @@ export class WaterfallScene extends Scene {
 
         new RectangularSprite(img_blätter_w, 178, 79, new Vector(620, 0), FOREGROUND_LAYER, true);
 
-        new Trigger(183, 2, new Vector(803, 538), () => {
+        new Trigger(183, 3, new Vector(803, 537), () => {
             console.log("HEHE");
-            this.loadScene(SlopyShitScene, 2);
+            this.loadScene(SlopyShitScene, 3);
         }, true);
 
         new Trigger(99, 2, new Vector(689, 0), () => {
             console.log("HEHE");
             this.loadScene(PentagramScene, 0);
         }, true);
-        
+
     }
 }
