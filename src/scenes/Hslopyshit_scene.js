@@ -3,15 +3,16 @@ import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { AutumnScene } from "./autumn_scene.js";
+import { HRuinsScene } from "./Hruins_scene.js";
 import { LookoutScene } from "./lookout_scene.js";
 import { RuinsScene } from "./ruins_scene.js";
 import { WaterfallScene } from "./waterfall_scene.js";
 
 
-export class SlopyShitScene extends Scene {
+export class HSlopyShitScene extends Scene {
     constructor(canvas, player) {
         const img = new Image;
-        img.src = "assets/backgrounds/Slopyshit.png"
+        img.src = "assets/backgrounds/HSlopyshit.png"
         super(canvas, img, [new Vector(616, 461), new Vector(903, 433), new Vector(562, 55), new Vector(47, 73)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
@@ -75,41 +76,23 @@ export class SlopyShitScene extends Scene {
         new Box(70, 56, new Vector(0, 206), OBSTACLE_LAYER, null, null, false);
 
 
-
-
-        const img_halftree = new Image;
-        img_halftree.src = "assets/slopyshit/tree_slopy_1.png";
-
-        let halftree = new RectangularSprite(img_halftree, 103, 291, new Vector(0, 0), DYNAMIC_LAYER, true);
-        halftree.pivot = new Vector(67, 227);
-
-
         const img_tree_slopy = new Image;
-        img_tree_slopy.src = "assets/slopyshit/baum_slopy_1.png";
+        img_tree_slopy.src = "assets/slopyshit/Trees_HSlopyshit_2.png";
 
-        let baum = new RectangularSprite(img_tree_slopy, 231, 185, new Vector(93, 318), DYNAMIC_LAYER, true);
+        let baum = new RectangularSprite(img_tree_slopy, 241, 209, new Vector(94, 306), DYNAMIC_LAYER, true);
         baum.pivot = new Vector(172, 476);
 
         const img_bigbaum = new Image;
-        img_bigbaum.src = "assets/slopyshit/bigbaum_slopy_1.png";
+        img_bigbaum.src = "assets/slopyshit/Trees_HSlopyshit_1.png";
 
-        new RectangularSprite(img_bigbaum, 259, 269, new Vector(204, 0), FOREGROUND_LAYER, true);
+        new RectangularSprite(img_bigbaum, 524, 246, new Vector(191, 0), FOREGROUND_LAYER, true);
 
-        const img_blätter = new Image;
-        img_blätter.src = "assets/slopyshit/blätter_slopy_1.png";
-
-        new RectangularSprite(img_blätter, 215, 112, new Vector(463, 0), FOREGROUND_LAYER, true);
-
-        const img_stonecolumn = new Image;
-        img_stonecolumn.src = "assets/slopyshit/stonecolumn_slopy_1.png";
-
-        new RectangularSprite(img_stonecolumn, 160, 200, new Vector(720, 315), FOREGROUND_LAYER, true);
 
 
         // RuinsScene
         new Trigger(130, 4, new Vector(583, 536), () => {
             console.log("HEHE");
-            this.loadScene(RuinsScene, 2);
+            this.loadScene(HRuinsScene, 2);
         }, true);
 
         //LookoutScene

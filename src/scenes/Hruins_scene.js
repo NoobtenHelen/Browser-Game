@@ -2,6 +2,7 @@ import { Box, RectangularSprite, Vector } from "../dynamics.js";
 import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
+import { HSlopyShitScene } from "./Hslopyshit_scene.js";
 import { HSpawnScene } from "./Hspawn_scene.js";
 import { LookoutScene } from "./lookout_scene.js";
 import { SlopyShitScene } from "./slopyshit_scene.js";
@@ -61,7 +62,7 @@ export class HRuinsScene extends Scene {
         // Example Trigger
         new Trigger(160, 10, new Vector(445, 0), () => {
             console.log("HEHE");
-            this.loadScene(SlopyShitScene, 0);
+            this.loadScene(HSlopyShitScene, 0);
         }, true);
 
 
