@@ -7,7 +7,7 @@ export class Enemy extends Ball {
     isChasingPlayer = false;
     randomDirection = new Vector(0.4, 0.2)
 
-    constructor(position) {
+    constructor(position, onHit) {
         let img = new Image();
         img.src = "assets/Enemy.png";
         super(19, position, ENEMY_LAYER, new Vector(0, 0), null, false);
@@ -18,6 +18,8 @@ export class Enemy extends Ball {
         }, () => {
             this.isChasingPlayer = false
         }, false);
+
+        this.hitbox = new Trigger(50, 50, new Vector(0, 0), onHit, null, true);
 
         setInterval(() => {
             this.randomDirection.x = Math.random() * 2 - 1;
@@ -47,5 +49,9 @@ export class Enemy extends Ball {
         let searchRadiusPosition = new Vector(this.position.x, this.position.y);
         searchRadiusPosition.subtract(new Vector(150, 165));
         this.searchRadius.position = searchRadiusPosition;
+
+        let hitboxPosition = new Vector(this.position.x, this.position.y);
+        hitboxPosition.subtract(new Vector(20, 30));
+        this.hitbox.position = hitboxPosition;
     }
 }

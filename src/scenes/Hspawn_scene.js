@@ -5,6 +5,7 @@ import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { HRuinsScene } from "./Hruins_scene.js";
 import { RuinsScene } from "./ruins_scene.js";
+import { SpawnScene } from "./spawn_scene.js";
 
 export class HSpawnScene extends Scene {
     constructor(canvas, player) {
@@ -30,7 +31,9 @@ export class HSpawnScene extends Scene {
         new Box(135, 88, new Vector(820, 303), OBSTACLE_LAYER, null, null, false)
 
 
-        let enemy = new Enemy(new Vector(546, 284));
+        let enemy = new Enemy(new Vector(546, 284), () => {
+            this.loadScene(SpawnScene, 0)
+        });
 
         const img_bush = new Image;
         img_bush.src = "assets/spawn/Baum_HSpawn_2.png";

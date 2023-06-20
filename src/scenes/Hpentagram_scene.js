@@ -4,6 +4,7 @@ import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { AutumnScene } from "./autumn_scene.js";
 import { HWaterfallScene } from "./Hwaterfall_scene.js";
+import { SpawnScene } from "./spawn_scene.js";
 import { WaterfallScene } from "./waterfall_scene.js";
 
 export class HPentagramScene extends Scene {
@@ -31,6 +32,7 @@ export class HPentagramScene extends Scene {
         new Box(155, 98, new Vector(561, 0), OBSTACLE_LAYER, null, null, false);
         new Box(152, 98, new Vector(247, 0), OBSTACLE_LAYER, null, null, false);
         new Box(26, 72, new Vector(335, 64), OBSTACLE_LAYER, null, null, false);
+
 
 
 

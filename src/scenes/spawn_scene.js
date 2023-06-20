@@ -27,7 +27,9 @@ export class SpawnScene extends Scene {
         new Box(70, 230, new Vector(0, 0), OBSTACLE_LAYER, null, null, false)
         new Box(100, 165, new Vector(510, 0), OBSTACLE_LAYER, null, null, false)
 
-        let enemy = new Enemy(new Vector(546, 284));
+        let enemy = new Enemy(new Vector(60, 263), () => {
+            this.loadScene(SpawnScene, 0)
+        });
 
         const img_bush = new Image;
         img_bush.src = "assets/spawn/bush_spawn_1.png";

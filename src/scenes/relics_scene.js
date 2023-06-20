@@ -45,7 +45,9 @@ export class RelicsScene extends Scene {
         new Box(28, 12, new Vector(373, 250), OBSTACLE_LAYER, null, null, false);
         new Box(28, 12, new Vector(561, 250), OBSTACLE_LAYER, null, null, false);
 
-        new Enemy(new Vector(200, 350));
+        new Enemy(new Vector(200, 350), () => {
+            this.loadScene(SpawnScene, 0)
+        });
 
         new Trigger(158, 3, new Vector(405, 537), () => {
             console.log("HEHE");
