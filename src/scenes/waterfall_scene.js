@@ -8,10 +8,10 @@ import { SlopyShitScene } from "./slopyshit_scene.js";
 import { SpawnScene } from "./spawn_scene.js";
 
 export class WaterfallScene extends Scene {
-    constructor(canvas, player, enemy) {
+    constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Waterfall.png"
-        super(canvas, img, [new Vector(764, 446), new Vector(675,52)], player, enemy)
+        super(canvas, img, [new Vector(764, 446), new Vector(675,52)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 

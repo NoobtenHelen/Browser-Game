@@ -7,10 +7,10 @@ import { SlopyShitScene } from "./slopyshit_scene.js";
 import { SpawnScene } from "./spawn_scene.js";
 
 export class RuinsScene extends Scene {
-    constructor(canvas, player, enemy) {
+    constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Ruins.png"
-        super(canvas, img, [new Vector(207, 253), new Vector(899, 303), new Vector(519,60)], player, enemy)
+        super(canvas, img, [new Vector(207, 253), new Vector(899, 303), new Vector(519, 60)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 

@@ -1,18 +1,15 @@
 import { Box, RectangularSprite, Vector } from "../dynamics.js";
-import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
+import { FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { AutumnScene } from "./autumn_scene.js";
-import { LookoutScene } from "./lookout_scene.js";
-import { SlopyShitScene } from "./slopyshit_scene.js";
-import { SpawnScene } from "./spawn_scene.js";
 import { WaterfallScene } from "./waterfall_scene.js";
 
 export class PentagramScene extends Scene {
-    constructor(canvas, player, enemy) {
+    constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Pentagram.png"
-        super(canvas, img, [new Vector(504, 480)], player, enemy)
+        super(canvas, img, [new Vector(504, 480)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 

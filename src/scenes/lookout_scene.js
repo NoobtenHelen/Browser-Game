@@ -1,15 +1,15 @@
 import { Box, RectangularSprite, Vector } from "../dynamics.js";
-import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
+import { DYNAMIC_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { RuinsScene } from "./ruins_scene.js";
 import { SlopyShitScene } from "./slopyshit_scene.js";
 
 export class LookoutScene extends Scene {
-    constructor(canvas, player, enemy) {
+    constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Lookout.png"
-        super(canvas, img, [new Vector(33, 108), new Vector(28, 458)], player, enemy)
+        super(canvas, img, [new Vector(33, 108), new Vector(28, 458)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -62,7 +62,7 @@ export class LookoutScene extends Scene {
         img_bush_lookout.src = "assets/lookout/bush_lookout_1.png";
 
         let bush_lookout = new RectangularSprite(img_bush_lookout, 67, 71, new Vector(423, 377), DYNAMIC_LAYER, true);
-        bush_lookout.pivot = new Vector(453,431)
+        bush_lookout.pivot = new Vector(453, 431)
 
 
 

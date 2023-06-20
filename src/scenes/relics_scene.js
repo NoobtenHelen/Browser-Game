@@ -1,4 +1,5 @@
 import { Box, RectangularSprite, Vector } from "../dynamics.js";
+import { Enemy } from "../enemy.js";
 import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
@@ -9,10 +10,10 @@ import { SlopyShitScene } from "./slopyshit_scene.js";
 import { SpawnScene } from "./spawn_scene.js";
 
 export class RelicsScene extends Scene {
-    constructor(canvas, player, enemy) {
+    constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Relics.png"
-        super(canvas, img, [new Vector(451, 486)], player, enemy)
+        super(canvas, img, [new Vector(451, 486)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -43,26 +44,7 @@ export class RelicsScene extends Scene {
         new Box(28, 12, new Vector(373, 250), OBSTACLE_LAYER, null, null, false);
         new Box(28, 12, new Vector(561, 250), OBSTACLE_LAYER, null, null, false);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        new Enemy(new Vector(200, 350));
 
         new Trigger(158, 3, new Vector(405, 537), () => {
             console.log("HEHE");

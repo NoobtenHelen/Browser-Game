@@ -8,10 +8,10 @@ import { RelicsScene } from "./relics_scene.js";
 
 
 export class AutumnScene extends Scene {
-    constructor(canvas, player, enemy) {
+    constructor(canvas, player) {
         const img = new Image;
         img.src = "assets/backgrounds/Autumn.png"
-        super(canvas, img, [new Vector(673, 458), new Vector(309, 45), new Vector(241, 494)], player, enemy)
+        super(canvas, img, [new Vector(673, 458), new Vector(309, 45), new Vector(241, 494)], player)
 
         let floorBounds = new Box(canvas.width, 0, new Vector(0, canvas.height), OBSTACLE_LAYER);
 
@@ -39,19 +39,6 @@ export class AutumnScene extends Scene {
         new Box(26, 12, new Vector(812, 386), OBSTACLE_LAYER, null, null, false);
         new Box(26, 12, new Vector(826, 374), OBSTACLE_LAYER, null, null, false);
         new Box(26, 12, new Vector(837, 362), OBSTACLE_LAYER, null, null, false);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         const img_steindings_1 = new Image;
         img_steindings_1.src = "assets/autumn/steindings_autumn_1.png";

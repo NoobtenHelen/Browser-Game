@@ -1,6 +1,7 @@
 import { addToLayer, allDrawableObjects, Vector } from "./dynamics.js";
 import { DYNAMIC_FOREGROUND_LAYER, DYNAMIC_LAYER, ENEMY_LAYER, OBSTACLE_LAYER, TRIGGER_LAYER } from "./layers.js";
 import { Player } from "./player.js";
+import { RelicsScene } from "./scenes/relics_scene.js";
 import { SpawnScene } from "./scenes/spawn_scene.js";
 
 let canvas;		//Zeichenfläche
@@ -20,7 +21,7 @@ function init() {
 
     player = new Player(new Vector(0, 0));
 
-    let firstScene = new SpawnScene(canvas, player);
+    let firstScene = new RelicsScene(canvas, player);
     //let secondScene = new RuinsScene(canvas, player);
 
     player.position = firstScene.spawnPoints[0];
@@ -32,17 +33,23 @@ function init() {
 function update(elapsed) {
     player.update(elapsed);
 
-    allDrawableObjects[ENEMY_LAYER].forEach(enemy => {
-        if (enemy.update) {
-            enemy.update(elapsed);
-        }
-    })
+    if (allDrawableObjects[ENEMY_LAYER]) {
+        allDrawableObjects[ENEMY_LAYER].forEach(enemy => {
+            if (enemy.update) {
+                enemy.update(elapsed, player);
+            }
+            allDrawableObjects[OBSTACLE_LAYER].forEach(obstacle => {
+                obstacle.reflectBall(enemy, 0); // set damping to 0 to stop the player immediately
+            });
+        })
+    }
 
     allDrawableObjects[OBSTACLE_LAYER].forEach(obstacle => {
         obstacle.reflectBall(player, 0); // set damping to 0 to stop the player immediately
     });
 
     allDrawableObjects[TRIGGER_LAYER].forEach(trigger => {
+
         if (trigger.collidesWith(player.triggerCollider)) {
             if (!trigger.triggered) {
                 trigger.enterFunction();
