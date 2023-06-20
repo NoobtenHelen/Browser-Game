@@ -9,7 +9,7 @@ export class Enemy extends Ball {
 
     constructor(position) {
         let img = new Image();
-        img.src = "assets/BURNING_SHEEP.png";
+        img.src = "assets/Enemy.png";
         super(19, position, ENEMY_LAYER, new Vector(0, 0), null, false);
 
         //this.triggerCollider = new Box(50, 50, new Vector(0, 0), PLAYER_LAYER, null, null, false);
