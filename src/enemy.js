@@ -12,7 +12,6 @@ export class Enemy extends Ball {
         img.src = "assets/Enemy.png";
         super(19, position, ENEMY_LAYER, new Vector(0, 0), null, false);
 
-        //this.triggerCollider = new Box(50, 50, new Vector(0, 0), PLAYER_LAYER, null, null, false);
         this.sprite = new RectangularSprite(img, 76, 76, new Vector(0, 0), ENEMY_LAYER, true);
         this.searchRadius = new Trigger(300, 300, new Vector(0, 0), () => {
             this.isChasingPlayer = true
@@ -39,9 +38,7 @@ export class Enemy extends Ball {
             this.position.add(new Vector(this.randomDirection.x * elapsed, this.randomDirection.y * elapsed));
         }
 
-        //let triggerColliderPosition = new Vector(this.position.x, this.position.y);
-        //triggerColliderPosition.subtract(new Vector(25, 36));
-        //this.triggerCollider.position = triggerColliderPosition;
+
 
         let rectangularSpritePosition = new Vector(this.position.x, this.position.y);
         rectangularSpritePosition.subtract(new Vector(38, 38 + 19));
