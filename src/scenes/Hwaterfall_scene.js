@@ -2,6 +2,7 @@ import { Box, RectangularSprite, Vector } from "../dynamics.js";
 import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
+import { HPentagramScene } from "./Hpentagram_scene.js";
 import { HSlopyShitScene } from "./Hslopyshit_scene.js";
 import { LookoutScene } from "./lookout_scene.js";
 import { PentagramScene } from "./pentagram_scene.js";
@@ -61,7 +62,7 @@ export class HWaterfallScene extends Scene {
 
         new Trigger(99, 2, new Vector(689, 0), () => {
             console.log("HEHE");
-            this.loadScene(PentagramScene, 0);
+            this.loadScene(HPentagramScene, 0);
         }, true);
 
     }

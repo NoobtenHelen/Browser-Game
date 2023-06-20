@@ -64,7 +64,7 @@ function update(elapsed) {
 }
 
 function paint() {
-    context.fillStyle = "lightblue";
+    context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     allDrawableObjects.forEach((layer, layerIndex) => {
