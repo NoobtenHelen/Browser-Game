@@ -4,6 +4,7 @@ import { DYNAMIC_LAYER, FOREGROUND_LAYER, OBSTACLE_LAYER } from "../layers.js";
 import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { AutumnScene } from "./autumn_scene.js";
+import { HSpawnScene } from "./Hspawn_scene.js";
 import { LookoutScene } from "./lookout_scene.js";
 import { PentagramScene } from "./pentagram_scene.js";
 import { SlopyShitScene } from "./slopyshit_scene.js";
@@ -49,6 +50,11 @@ export class RelicsScene extends Scene {
         new Trigger(158, 3, new Vector(405, 537), () => {
             console.log("HEHE");
             this.loadScene(AutumnScene, 1);
+        }, true);
+
+        new Trigger(65, 45, new Vector(450, 228), () => {
+            console.log("HEHE");
+            this.loadScene(HSpawnScene, 0);
         }, true);
     }
 }

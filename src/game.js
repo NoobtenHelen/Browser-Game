@@ -21,7 +21,7 @@ function init() {
 
     player = new Player(new Vector(0, 0));
 
-    let firstScene = new SpawnScene(canvas, player);
+    let firstScene = new RelicsScene(canvas, player);
     //let secondScene = new RuinsScene(canvas, player);
 
     player.position = firstScene.spawnPoints[0];
