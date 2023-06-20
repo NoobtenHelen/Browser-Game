@@ -4,6 +4,7 @@ import { Scene } from "../scene.js"; // ../ = Ein ordner darüber
 import { Trigger } from "../trigger.js";
 import { AutumnScene } from "./autumn_scene.js";
 import { HRuinsScene } from "./Hruins_scene.js";
+import { HWaterfallScene } from "./Hwaterfall_scene.js";
 import { LookoutScene } from "./lookout_scene.js";
 import { RuinsScene } from "./ruins_scene.js";
 import { WaterfallScene } from "./waterfall_scene.js";
@@ -110,7 +111,7 @@ export class HSlopyShitScene extends Scene {
 
         new Trigger(73, 3, new Vector(29, 0), () => {
             console.log("HEHE");
-            this.loadScene(WaterfallScene, 0);
+            this.loadScene(HWaterfallScene, 0);
         }, false);
 
     }
