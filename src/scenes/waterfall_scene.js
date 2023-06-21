@@ -56,7 +56,7 @@ export class WaterfallScene extends Scene {
 
         new RectangularSprite(img_blätter_w, 178, 79, new Vector(620, 0), FOREGROUND_LAYER, true);
 
-        new Trigger(183, 3, new Vector(803, 537), () => {
+        new Trigger(183, 4, new Vector(803, 536), () => {
             console.log("HEHE");
             this.loadScene(SlopyShitScene, 3);
         }, true);

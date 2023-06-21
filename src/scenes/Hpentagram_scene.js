@@ -46,10 +46,7 @@ export class HPentagramScene extends Scene {
 
         new RectangularSprite(img_stone, 54, 69, new Vector(641, 379), OBSTACLE_LAYER, true);
 
-        new Trigger(161, 2, new Vector(399, 0), () => {
-            console.log("HEHE");
-            this.loadScene(AutumnScene, 2);
-        }, true);
+
 
         new Trigger(220, 2, new Vector(393, 537), () => {
             console.log("HEHE");
